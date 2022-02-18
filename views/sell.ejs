@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="csrf-token" content="<%= csrfToken %>">
+    <link rel="stylesheet" href="/static/css/sell.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"
+    defer
+  ></script>
+    <title>SELL</title>
+  </head>
+  <body>
+    <!-- <header>
+        SELL BOOKSHELF
+    </header> -->
+    <nav>
+      <div class="navbar">
+        <li>
+          <a id="book-img" href="#"><i class="fas fa-book"></i></a>
+        </li>
+        <span id="logo">BOOKSHELF</span>
+        <div id="user_shit">
+          <span id="user_img"><img src="<%= photoUrl %>" /></span>
+          <span id="username"><%= name %></span>
+        </div>
+      </div>
+    </nav>
+    <main>
+<!-- 
+      <div class="main_container">
+        <div id="drop_down_menu"> <ul>
+          <li>
+            <a href="#" id="home"><i class="fas fa-home"></i></a>
+          </li>
+          <li>
+            <a href="#" id="ads"
+              ><i class="fas fa-mail-bulk"></i></a
+            >
+          </li>
+          <li>
+            <a href="#" id="account"><i class="fas fa-user"></i></a>
+          </li>
+
+          <li id="logout">
+            <a href="/sessionLogout"><i class="fas fa-sign-out-alt"></i></a>
+            
+          </li>
+        </ul>
+
+
+        </div> -->
+        <div class="sidebar">
+          <div class="wrapper_sidebar">
+            <ul>
+              <li class="nav_link">
+                <a href="#" id="home"><i class="fas fa-home "></i>Home</a>
+              </li>
+              <li class="nav_link">
+                <a href="#" id="ads"
+                  ><i class="fas fa-mail-bulk"></i>Your ads</a
+                >
+              </li>
+              <li class="nav_link">
+                <a href="#" id="account"><i class="fas fa-user"></i>Account</a>
+              </li>
+
+              <li id="logout">
+                <a href="/sessionLogout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="dynamic_container">
+          <div class="home" id="home_container">
+            <div class="upload_container">
+              <div id="home_banner_text">
+                Upload your Books you want to sell
+              </div>
+              <a href="#" id="sell_now" class="sell_btn"
+                ><i id="angle" class="fas fa-angle-up"></i>Upload</a
+              >
+              
+             
+              <div class="modal hidden" id="modal">
+                <div class="wrapper">
+                  <div class="title">Book Shelf</div>
+                  <span class="close" id="close">&times;</span>
+
+                  <div class="form">
+                    <div class="inputfield">
+                      <label>Book Name</label>
+                      <input id="book_name" type="text" class="input" />
+                    </div>
+                    <div class="inputfield">
+                      <label>Author Name</label>
+                      <input id="author_name" type="text" class="input" />
+                    </div>
+                    <div class="inputfield">
+                      <label>Select Language</label>
+                      <div class="custom_select">
+                        <select id="options">
+                          <option value="">Select</option>
+                          <option value="male">Hindi</option>
+                          <option value="female">English</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="inputfield">
+                      <label>Select Book</label>
+                      <div class="custom_select">
+                        <select id="select_drop_down">
+                          <option value="">Select</option>
+                          <option value="male">Science</option>
+                          <option value="female">commerce</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="inputfield">
+                      <label>Purchase Year</label>
+                      <input id="purchase_year" type="text" type="number" maxlength="4" class="input" />
+                    </div>
+                    <div class="inputfield">
+                      <label>Price</label>
+                      <input id="book_condition"  type="number" maxlength="4" class="input" />
+                    </div>
+                    <div class="inputfield">
+                      <label>Description</label>
+                      <textarea id="description" class="textarea"></textarea>
+                    </div>
+                    <div class="inputfield">
+                      <label>Phone No</label>
+                      <input id="phone_no" type="number" maxlength="10" class="input" />
+                    </div>
+                    <div class="inputfield">
+                      <label>Upload picture</label>
+                      <input
+                        id="book_image"
+                      name="myfile"
+                        type="file"
+                        accept="image/*"
+                        class="input"
+                        required
+                      />
+                    </div>
+
+                    <!-- <div class="inputfield terms">
+                          <label class="check">
+                            <input type="checkbox">
+                            <span class="checkmark"></span>
+                          </label>
+                          <p>Agreed to terms and conditions</p>
+                       </div>  -->
+                    <div class="inputfield">
+                      <input
+                        id="book_submit"
+                        type="submit"
+                        value="submit"
+                        class="btn"
+                      />
+                    </div>
+                 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="your_ads hidden" id="your_ads">
+            <div class="cards_container" id="card_container">
+              
+              <div class="card box .hidden">
+                <img src='' alt="rosted meat" />
+                <div id=""  class="blogcontent">
+                  <h3><span>ADD TO SOLD</span></h3>
+                  <a  href="#" class="btn value"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div id="account_container" class="hidden">
+            <div class="profile_container">
+              <div class="user_details">
+                <div class="user_details_wrapper">
+                  <span> NAME : <%= name %></span>
+                  <span>EMAIL : <%= email %></span>
+                  <span> PHONE NUMBER : <%= phone %></span>
+                </div>
+                <div class="image_wrapper">
+                  <img
+                    src="<%= photoUrl %>"
+                    alt="user_image"
+                  />
+                </div>
+
+                <li id="deactivate_account">
+                  <a href="#"
+                    ><i class="fas fa-user-minus"></i>Delete Account</a
+                  >
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="footer_inner">
+          <span>Created with ❤ by Mr_internetix</span>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="/static/js/sell.js"></script>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/login.css" />
+    <title>Login</title>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"
+      defer
+    ></script>
+    <script
+      src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"
+      defer
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"
+    defer
+  ></script>
+  </head>
+  <body>
+    <div class="login_container">
+      <div class="login_img">
+        <span class="login_text">Login</span>
+        <img src="https://i.ibb.co/6v3Xyfn/polar.png" alt="login-img" />
+        
+      </div>
+
+      <form id="login" action="">
+        <input
+          class="input_field"
+          type="text"
+          name="username"
+          id="username"
+          placeholder="Username"
+        />
+        <input
+          class="input_field"
+          type="password"
+          name="password"
+          id="password"
+          placeholder="Password"
+        />
+        <input type="submit" value="Login" id="login-btn" />
+        <p class="signup_link">
+          <a class="form_link" href="#" id="linkCreateAccount"
+            >Don't have an account?
+            <span class="create">Create account</span></a
+          >
+        </p>
+      </form>
+    </div>
+
+    <div class="signup_container container_hidden">
+      <div class="signup_img">
+        <!-- <span class="login_text">Login</span>
+            <img src="/static/images/polar.png" alt="login-img"> -->
+            <div id="go_back">
+              <a href="/login"><svg height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M21.883 12l-7.527 6.235.644.765 9-7.521-9-7.479-.645.764 7.529 6.236h-21.884v1h21.883z"/></svg></a>
+
+            </div>
+           
+        <img id="signup_img" src="/static/images/signup.svg" alt="signup_img" />
+        <span id="error">  </span>
+      </div>
+
+      <form id='signup' action="">
+        <input type="text" id="name" class="input_field" placeholder="Name" />
+        <input type="tel"  maxlength="10"  id = "phone" class="input_field" placeholder="Phone  (optional)" />
+        <input type="text" id ="email"  class="input_field" placeholder="Email" />
+        <input type="password" id = "signup_password" onblur="check_password()" class="input_field" placeholder="Password" />
+        <input type="password" id="confirm_password" onblur="check_password()" class="input_field" placeholder="Confirm Password" />
+        <input type="submit" value="Sign Up"  />
+      </form>
+    </div>
+  </body>
+  <script src="/static/js/login.js"></script>
+</html>

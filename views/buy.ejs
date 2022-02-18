@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="/static/css/card.css" /> -->
+    <link rel="stylesheet" href="/static/css/buy.css" />
+    <link
+      href="https://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <title>BUY BOOKS</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar_">
+          <span>BOOK SHELF</span>
+          <div class="sell_now_btn">
+            <a href="/login"> SELL NOW</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div class="post_container">
+         <% for(let i = 0; i<data.length; i++){ %>
+          <%for(let j = 0; j <data[i].bookName.length; j++){ %>
+        
+          <div class="wp-block product">
+             <figure>
+              <img
+              alt="product-image" 
+              src="<%=data[i].path[j]%>"
+              class="img-responsive img-center product-img"
+            />
+           </figure>
+            <h2 class="product-title"><a href="#"><%=data[i].bookName[j]%></a></h2>
+            <p>
+            <%= data[i].description[j] %>
+            </p>
+            <div class="wp-block-footer">
+             <span class="price pull-left">₹ <%=data[i].price[j]%></span>
+             <a
+                  href="#" id="<%=data[i]._id%>"
+              class="btn btn-sm btn-info btn-icon btn-cart pull-right buy_now"
+              >Buy NOW
+             
+              </a>
+            </div>
+        </div>
+
+
+        <% } %>
+        <% } %> 
+    </div>
+    </div>
+    </main>
+    <footer>
+      <div class="footer_container">
+        <div class="footer_inner">
+          <span>Created with ❤ by Mr_internetix</span>
+        </div>
+      </div>
+    </footer>
+
+    <style type="text/css">
+      .wp-block {
+        margin: 0 0 15px 0;
+        padding: 15px;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+        position: relative;
+        cursor: default;
+        border-radius: 2px;
+      }
+
+      .wp-block.product {
+        background: #fff;
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid #e0eded;
+        max-height: 491px;
+      }
+
+      .wp-block:before,
+      .wp-block:after {
+        display: table;
+        content: "";
+      }
+
+      .wp-block.product figure {
+        padding-bottom: 15px;
+        border-bottom: 1px solid #e0eded;
+      }
+
+      .product-img{
+        width: 300px;
+        height: 300px;
+      }
+
+      .img-center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+      }
+
+
+      .wp-block.product .product-title {
+        margin: 10px 0 0 0;
+        padding: 0;
+        border-bottom: 0;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+
+      .wp-block.product .product-title a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .wp-block.product p {
+        color: #616161;
+      }
+
+      .wp-block.product .wp-block-footer {
+        border-top: 1px solid #e0eded;
+        padding-top: 15px;
+        padding-bottom: 25px;
+      }
+
+      .wp-block.product .price {
+        padding: 4px 0;
+        font-size: 13px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .btn-base {
+        color: #fff !important;
+        background-color: #3498db;
+        border: 1px solid;
+        border-color: #258cd1;
+      }
+
+      .btn-icon {
+        position: relative;
+      }
+
+      .btn-icon.btn-sm span,
+      .btn-icon.btn-sm input {
+        padding-left: 35px;
+      }
+
+      .btn {
+        border-radius: 0;
+        border: 0;
+        border-bottom: 4px solid #cccccc;
+        margin: 0;
+        -webkit-box-shadow: 0 5px 5px -6px rgba(0, 0, 0, 0.3);
+        -moz-box-shadow: 0 5px 5px -6px rgba(0, 0, 0, 0.3);
+        box-shadow: 0 5px 5px -6px rgba(0, 0, 0, 0.3);
+      }
+
+      .btn-info {
+        background-color: #39b3d7;
+        border-color: #348fd2;
+        text-shadow: 1px 1px 0 #238ed5;
+      }
+    </style>
+
+    <script src="/static/js/buy.js"></script>
+  </body>
+</html>

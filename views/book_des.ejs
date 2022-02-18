@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css"
+  />
+  <script
+    src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"
+    defer
+  ></script>
+    <link rel="stylesheet" href="/static/css/book_des.css">
+    <title>book_description</title>
+  </head>
+  <body>
+  
+        <div class="navbar_">
+            <span>BOOK SHELF</span>
+            
+          </div>
+
+  
+
+<div id="main_container">
+    <div class="container mt-5 mb-5">
+        <div class="card">
+        <div class="row g-0">
+        <div class="col-md-6 border-end">
+        <div class="d-flex flex-column justify-content-center">
+        <div class="main_image"> <img src="<%= obj.path %>" id="main_product_image" width="350"> </div>
+        <div class="d-flex align-items-center justify-content-center mt-4">
+            <span> <%= obj.book_name %> </span> 
+        </div>
+        </div>
+        </div>
+        <div class="col-md-6">
+        <div class="p-3 right-side">
+        <div class="d-flex justify-content-between align-items-center">
+        <h3><%= obj.book_name %></h3> <span class="heart"><i id="share" class='bx bx-share'></i></span>
+        </div>
+        <div class="mt-2 pr-3 content">
+        <p><%= obj.description %></p>
+        </div>
+        <h3>₹ <%= obj.price %></h3>
+        <div class="ratings d-flex flex-row align-items-center">
+            <div class="d-flex flex-row"> 
+        <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bxs-star'></i> <i class='bx bx-star'></i> </div> <span>441 reviews</span>
+        </div>
+        <div class="mt-5"> <span class="fw-bold">Details</span>
+        <div class="colors">
+            <ul id="marker " class="d-flex flex-column">
+                <div class="d-flex">
+                    <li  id="marker-1"></li><span>Author-name : <%= obj.author_name %></span>
+                </div>
+                 <div class="d-flex">
+                    <li class="mt-2" id="marker-2"></li><span class="mt-2">Type: <%=obj.type %> </span>
+                 </div>
+                 <div class="d-flex">
+                    <li class="mt-2" id="marker-3">  </li><span class="mt-2"> Language :<%= obj.language %> </span>
+        
+                 </div>
+                 <div class="d-flex">
+                    <li class="mt-2" id="marker-4"> </li><span class="mt-2">Year : <%=obj.purchase_year %> </span> 
+                 </div>
+                
+            
+            </ul>
+        </div>
+        </div>
+        <div class="buttons d-flex flex-row mt-5 gap-3"> <a class="btn btn-outline-dark d-flex align-items-center justify-content-center" href="tel:<%=obj.phone_no%>"><i class='bx bxs-phone ml-2'></i>Call Now </a> <a class="btn btn-success d-flex align-items-center alig-self-center justify-content-center" href="https://wa.me/<%obj.phone_no%>"> <i class='bx bxl-whatsapp'></i>WhatsApp</a>  </div>
+        </div>
+        </div>
+        </div>
+
+</div>
+
+        
+
+
+
+
+<script type='text/javascript' src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+<script src="/static/js/book_des.js"></script>
+</body>
+
+</html>
