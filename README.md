@@ -99,7 +99,7 @@ var imagekit = new ImageKit({
 ## Database configs
 
 `Just add the Database url in .env file ( I expect that mongo will create the collections automatically if not
-create manually by creating three collections ) i.e 
+create manually by creating two collections ) i.e 
 ` 
 * books
 * users
